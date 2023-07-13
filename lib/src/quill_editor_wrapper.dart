@@ -425,6 +425,7 @@ class QuillHtmlEditorState extends State<QuillHtmlEditor> {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/2.0.0-dev.4/quill.snow.min.css" />
           <!-- Include the Quill library -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/2.0.0-dev.4/quill.min.js"></script>
+        <script src="https://dev.easyapp.com.tw/helping-hand/quill-resize-module.js"></script>
         <style>
         body, html{
         -webkit-user-select: text !important;
@@ -673,6 +674,8 @@ class QuillHtmlEditorState extends State<QuillHtmlEditor> {
             ResponsibilityBlot.tagName = 'responsibility';
             Quill.register(ResponsibilityBlot);
             
+            Quill.register("modules/resize", window.QuillResizeModule);
+            
             var quilleditor = new Quill('#editor', {
               modules: {
                 toolbar: '#toolbar-container',
@@ -682,7 +685,12 @@ class QuillHtmlEditorState extends State<QuillHtmlEditor> {
                   delay: 2000,
                   maxStack: 500,
                   userOnly: false
-                }
+                },
+                resize: {
+                  locale: {
+                    center: "center",
+                  },
+                },
               },
               theme: 'snow',
              scrollingContainer: '#scrolling-container', 
