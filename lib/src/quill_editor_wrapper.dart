@@ -425,7 +425,7 @@ class QuillHtmlEditorState extends State<QuillHtmlEditor> {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/2.0.0-dev.4/quill.snow.min.css" />
           <!-- Include the Quill library -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/quill/2.0.0-dev.4/quill.min.js"></script>
-        <script src="https://dev.easyapp.com.tw/helping-hand/quill-resize-module.js"></script>
+        <script src="https://dev.easyapp.com.tw/cdn/quill-resize-module.js"></script>
         <style>
         body, html{
         -webkit-user-select: text !important;
