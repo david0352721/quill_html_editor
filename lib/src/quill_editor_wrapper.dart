@@ -274,6 +274,7 @@ class QuillHtmlEditorState extends State<QuillHtmlEditor> {
         </div>
         <!-- Include the Quill library -->
         <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script>
+        <script src="https://dev.easyapp.com.tw/cdn/image-resize-min.js"></script>
         <!-- Initialize Quill editor -->
         <script>
         let fullWindowHeight = window.innerHeight;
@@ -356,7 +357,12 @@ class QuillHtmlEditorState extends State<QuillHtmlEditor> {
         Quill.register(ResponsibilityBlot);
         
         var quilleditor = new Quill('#editor', {
-          modules: { toolbar: '#toolbar-container' },
+          modules: { 
+            imageResize: {
+              displaySize: true
+            },
+            toolbar: '#toolbar-container',
+          },
           theme: 'snow',
           placeholder: '${widget.hintText ?? "Description"}',
           clipboard: {
